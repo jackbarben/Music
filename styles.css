@@ -1,0 +1,49 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.bg-violet {
+    background-color: #6f42c1 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.jumbotron {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.section-btn {
+    background-color: #6f42c1;
+    color: #fff;
+    border: none;
+    font-size: 1.2em;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.section-btn:hover {
+    background-color: #5a3598;
+}
+
+#start-learn-btn {
+    background-color: #6f42c1;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#start-learn-btn:hover {
+    background-color: #5a3598;
+}
+
+footer {
+    background-color: #e9ecef;
+}
