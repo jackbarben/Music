@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VexFlow Test</title>
+    
+    <!-- VexFlow (latest version) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vexflow/4.2.5/vexflow-min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #staff {
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for rendering the staff -->
+    <div id="staff"></div>
+
+    <script>
+        // Wait for DOM to be ready
+        window.onload = function() {
+            const VF = Vex.Flow;
+            const div = document.getElementById("staff");
+
+            // Create an SVG renderer and attach it to the div
+            const renderer = new VF.Renderer(div, VF.Renderer.Backends.SVG);
+            renderer.resize(600, 200);
+
+            // Configure the rendering context
+            const context = renderer.getContext();
+
+            // Create a stave at position 10, 40 of width 500 on the SVG
+            const stave = new VF.Stave(10, 40, 500);
+            stave.addClef("treble").setContext(context).draw();
+
+            // Create notes (simple quarter notes for testing)
+            const notes = [
+                new VF.StaveNote({
+                    clef: "treble",
+                    keys: ["c/4"],
+                    duration: "q"
+                }),
+                new VF.StaveNote({
+                    clef: "treble",
+                    keys: ["d/4"],
+                    duration: "q"
+                }),
+                new VF.StaveNote({
+                    clef: "treble",
+                    keys: ["e/4"],
+                    duration: "q"
+                }),
+                new VF.StaveNote({
+                    clef: "treble",
+                    keys: ["f/4"],
+                    duration: "q"
+                })
+            ];
+
+            // Create a voice in 4/4 and add the notes
+            const voice = new VF.Voice({ numBeats: 4, beatValue: 4 });
+            voice.addTickables(notes);
+
+            // Format and justify the notes to 400 pixels
+            new VF.Formatter().joinVoices([voice]).format([voice], 400);
+
+            // Render voice
+            voice.draw(context, stave);
+        };
+    </script>
+</body>
+</html>

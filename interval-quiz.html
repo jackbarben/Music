@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Quiz</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- VexFlow for music notation (latest version) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vexflow/4.2.5/vexflow-min.js"></script>
+</head>
+<body>
+    <!-- Navbar (reusable across pages) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-violet">
+        <a class="navbar-brand" href="index.html">Music Learning App</a>
+    </nav>
+
+    <div class="container mt-5">
+        <!-- Staff Display Area -->
+        <div id="staff-display" class="text-center">
+            <!-- Use a div instead of a canvas for SVG rendering -->
+            <div id="staffCanvas"></div>
+        </div>
+
+        <!-- Interval Choice Buttons -->
+        <div class="row mt-4">
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Second">Second</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Third">Third</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Fourth">Fourth</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Fifth">Fifth</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Sixth">Sixth</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Seventh">Seventh</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Octave">Octave</button>
+            </div>
+            <div class="col-md-3 mb-3">
+                <button class="btn btn-outline-primary btn-block interval-btn" data-interval="Unison">Unison</button>
+            </div>
+        </div>
+
+        <!-- Feedback & Progress Indicator -->
+        <div id="feedback" class="text-center mt-4">
+            <p id="streak-indicator">Streak: 0</p>
+            <p id="timer-indicator">Time: 0 sec</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Global script -->
+    <script src="app.js"></script>
+    <!-- Interval-specific script -->
+    <script src="interval-quiz.js"></script>
+</body>
+</html>

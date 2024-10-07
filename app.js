@@ -1,10 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Handle Learn Button (only for intervals page)
-    const learnBtn = document.getElementById('start-learn-btn');
-    if (learnBtn) {
-        learnBtn.addEventListener('click', function () {
-            // Redirect to the first interval quiz/learning page
-            window.location.href = 'interval-quiz.html'; // This page will be created later
-        });
-    }
+    // This is a placeholder for any global events and functionality.
+    // Remove interval-specific logic, leaving room for generic event listeners or global state management.
+    
+    // For example, you could handle global navigation or set up general page behavior here.
+    console.log('Global app.js loaded');
 });
